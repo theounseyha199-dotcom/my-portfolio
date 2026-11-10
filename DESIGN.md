@@ -37,3 +37,7 @@ The desktop Hero uses asymmetric text and visual columns within the 1260px conta
 Section anchors and a shared Motion indicator provide navigation. The mobile menu closes after selection or Escape and restores focus after Escape. Hero text and the editor enter once with short transform animations; their server-rendered content remains visible before hydration. Reduced-motion preference disables spatial motion. The editor chrome is illustrative rather than clickable. Project and experience details remain accessible disclosures. Unconfigured contact, social, and project destinations stay hidden.
 
 The supplied `public/logo.png` is the brand mark in both header and footer. Its wide canvas is framed with a fixed crop in CSS so the central S remains legible; the source asset is not altered. The header mark is 38 × 38px, while the footer mark is larger. The adjacent `seyha.dev` text provides a readable name. Interface icons use React Icons for a consistent visual system; symbols inside the editor are code content.
+
+## Account integration
+
+The navigation links to `/account`. Account views reuse the existing palette, typeface, card radius, and focus styles in both themes. IAM owns the sign-in form. The account card fetches the current profile with loading, guest, error/retry, and authenticated states. Sign-out uses a same-origin POST and ends the IAM browser SSO session through OIDC logout. Auth/session code is owned by `src/lib/iam.ts` and `src/app/api/auth`; no secrets are exposed in client components.

@@ -88,7 +88,7 @@ export function Navigation() {
     <nav className="nav container" aria-label="Main navigation">
       <a className="logo" href="#home" onClick={() => setOpen(false)} aria-label="Seyha, back to top"><span className="logo-image"><Image src={seyhaLogo} alt="" priority /></span><span className="logo-word">seyha<span>.dev</span></span></a>
       <div className="desktop-nav">{links.map(([label, id]) => <a key={id} href={`#${id}`} className={active === id ? "active" : ""} aria-current={active === id ? "location" : undefined}>{label}{active === id && <motion.span className="nav-indicator" layoutId="nav-indicator" transition={{ type: "spring", stiffness: 400, damping: 32 }} />}</a>)}</div>
-      <div className="nav-actions"><ThemeToggle /><button ref={menuButton} className="menu-toggle" type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}><Icon type={open ? "close" : "menu"} size={24} /></button></div>
+      <div className="nav-actions"><a className="nav-account" href="/account" aria-label="Your account"><FiUser size={16} aria-hidden="true" /><span>Account</span></a><ThemeToggle /><button ref={menuButton} className="menu-toggle" type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}><Icon type={open ? "close" : "menu"} size={24} /></button></div>
     </nav>
     <div id="mobile-nav" className={`mobile-nav ${open ? "open" : ""}`} inert={!open}>
       <AnimatePresence initial={false}>

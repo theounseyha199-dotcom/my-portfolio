@@ -298,3 +298,7 @@ html[data-theme="light"] .theme-icon-moon { opacity: 1; transform: scale(1) rota
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+.nav-account { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; padding: 0 10px; font-size: 12px; color: var(--text); border: 1px solid var(--line); border-radius: 8px; }
+.nav-account:hover { border-color: var(--cyan); color: var(--cyan); }
+@media (max-width: 420px) { .nav-account span { display: none; } .nav-account { width: 44px; } }
